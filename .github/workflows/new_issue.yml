@@ -1,0 +1,18 @@
+name: New issue
+
+on:
+  issues:
+    types:
+    - opened
+
+jobs:
+  new_issue:
+    name: New issue
+    runs-on: ubuntu-latest
+    if: !github.event.issue.pull_request && github.actor != 'DorpsGek'
+
+    steps:
+    - name: Do Something
+      run: |
+        echo "SOMETHING"
+        echo "I have run"
