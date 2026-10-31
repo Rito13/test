@@ -9,7 +9,7 @@ jobs:
   new_issue:
     name: New issue
     runs-on: ubuntu-latest
-    if: !github.event.issue.pull_request
+    if: github.event.issue.pull_request == false
 
     steps:
     - name: Do Something
